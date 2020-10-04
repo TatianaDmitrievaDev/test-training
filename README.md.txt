@@ -1,3 +1,26 @@
 test-training
 
 Dmitrieva Tatiana
+
+
+Вывести количество заказов каждого пикера:
+
+SELECT Pickers.name, Pickord.orid FROM (SELECT picker_id AS pid, COUNT (Orders.id) AS orid
+FROM Orders 
+GROUP BY picker_id) PickOrd
+JOIN Pickers ON Pickord.pid = Picker.id
+
+Вывести имя пикера и количество заказов с количеством позиций меньше 10.
+
+SELECT pickers.name, ordpickerID.
+(SELECT orders.picker_id, count(positions.order_id)
+FROM orders JOIN 
+(SELECT Order_id, COUNT (Order_positions.id) AS Ordposid
+FROM Order_positions
+GROUP BY Order_id
+HAVING Ordposid < 10) positions 
+ON orders.id = positions.order_id
+GROUP BY) ordpickerID
+
+
+New update!
