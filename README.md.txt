@@ -2,7 +2,7 @@ test-training
 
 Dmitrieva Tatiana
 
-
+1203867267
 Вывести количество заказов каждого пикера:
 
 SELECT Pickers.name, Pickord.orid FROM (SELECT picker_id AS pid, COUNT (Orders.id) AS orid
@@ -23,9 +23,11 @@ ON orders.id = positions.order_id
 GROUP BY) ordpickerID
 
 
-New update!
+Update from 5.10.20
 
-New update 2
+SELECT FirstName, LastName, City, State
+FROM Person p
+LEFT JOIN Address ad ON  ad.AddresId = p.PersonID;
 
 
 
