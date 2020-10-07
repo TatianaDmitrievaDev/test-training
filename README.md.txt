@@ -30,6 +30,17 @@ FROM Person p
 LEFT JOIN Address ad ON  ad.AddresId = p.PersonID;
 
 
+# Write your MySQL query statement below
+SELECT Employee.Name AS Employee, Salary, Department.Name as Department
+FROM Employee
+
+JOIN Department 
+ON Department.Id = Employee.DepartmentId
+WHERE (Salary, DepartmentId)
+ IN
+(SELECT max(Salary) AS ms, DepartmentId
+FROM Employee
+GROUP BY DepartmentId);
 
 
 
